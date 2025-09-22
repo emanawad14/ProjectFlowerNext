@@ -10,11 +10,12 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+
 import { HeartIcon, ShoppingCartIcon } from 'lucide-react';
 import Icons from '@/components/icons/icons';
 import next from 'next';
 import Link from 'next/link';
+import Addtocart from '@/components/AddToCart/Addtocart';
 
 export default async function Product() {
   const response = await fetch('https://ecommerce.routemisr.com/api/v1/products' ,
@@ -37,7 +38,7 @@ export default async function Product() {
             
             
             <button className="absolute top-3 right-3 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition">
-              <HeartIcon className="w-5 h-5 text-red-500" />
+              <HeartIcon className="w-5 h-5 text-black-500" />
             </button>
 
            
@@ -61,7 +62,7 @@ export default async function Product() {
               <CardDescription className="text-sm text-gray-500">
                 {product.category.name}
               </CardDescription>
-              <CardAction className="text-xs text-gray-400">
+              <CardAction className="text-xs font-bold text-gray-400">
                 {product.brand.name}
               </CardAction>
             </CardHeader>
@@ -83,12 +84,8 @@ export default async function Product() {
              
             </CardContent>
 
-            <CardFooter className="gap-3">
-              <Button className="grow flex items-center gap-2">
-                <ShoppingCartIcon className="w-4 h-4" />
-                Add to Cart
-              </Button>
-            </CardFooter>
+           
+           <Addtocart productId={product.id}/>
           </Card>
         ))}
       </div>

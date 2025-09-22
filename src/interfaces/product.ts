@@ -2,6 +2,7 @@ import { CategoryI } from "./category"
 
 export interface ProductI {
   sold?: number
+   imageCover: string
   images: string[]
   subcategory: CategoryI[]
   ratingsQuantity: number
@@ -11,7 +12,8 @@ export interface ProductI {
   description: string
   quantity: number
   price: number
-  imageCover: string
+ 
+  
   category: CategoryI
   brand: CategoryI
   ratingsAverage: number
