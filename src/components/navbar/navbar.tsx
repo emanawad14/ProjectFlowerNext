@@ -56,6 +56,11 @@ export default function Navbar() {
                     <Link href="/brands">Brands</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/allorders">AllOrders</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -106,6 +111,7 @@ export default function Navbar() {
                     <Link href="/products">Products</Link>
                     <Link href="/categories">Categories</Link>
                     <Link href="/brands">Brands</Link>
+                    <Link href="/allorders">AllOrders</Link>
                   </nav>
                 </SheetContent>
               </Sheet>

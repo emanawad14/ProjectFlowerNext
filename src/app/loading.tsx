@@ -1,34 +1,38 @@
 "use client";
 
 import React from "react";
-import { Loader2, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function Loading() {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-      
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-        className="mb-6"
-      >
-        <Loader2 className="w-16 h-16 text-indigo-400" />
-      </motion.div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+      <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-8">
+        Shop Mart
+      </h1>
 
-     
-      <motion.h1
-        className="text-4xl font-bold flex items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
+      <svg
+        className="animate-spin h-16 w-16 text-gray-900"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
       >
-        Loading
-        <Sparkles className="w-7 h-7 text-yellow-400 animate-pulse" />
-      </motion.h1>
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="2" 
+        />
+        <path
+          className="opacity-90"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v3a5 5 0 00-5 5H4z"
+        />
+      </svg>
 
-      
-      <p className="mt-4 text-gray-400">Please wait while we prepare everything 🚀</p>
+      <p className="mt-6 text-gray-600 text-sm tracking-wide">
+    Loading.....
+      </p>
     </div>
   );
 }

@@ -10,19 +10,23 @@ export const CartContext=createContext<
      setcartData:(value:CartResponse|null)=>void,
      isLoading:boolean,
      setisLoading:(value:boolean)=>void,
-     getCart:() =>void
+     getCart:() =>void,
+    
 }>({
 
       cartData:null,
      setcartData:()=>{},
      isLoading:false,
      setisLoading:()=>{},
-     getCart() {}
+     getCart() {},
+    
+
 });
 
 export default function CartContextProvider({children}:{children:ReactNode}){
     const [cartData, setcartData] = useState<CartResponse|null>(null);
     const [isLoading, setisLoading] = useState<boolean>(true);
+    const [userId, setuserId] = useState<string>('');
 
 
     async function getCart()
@@ -40,6 +44,11 @@ export default function CartContextProvider({children}:{children:ReactNode}){
 
         const data:CartResponse=await response.json();
         setcartData(data);
+     
+        if (cartData?.data.cartOwner) {
+
+             localStorage.setItem('userId',cartData?.data.cartOwner)  
+        }
         setisLoading(false)
 
 

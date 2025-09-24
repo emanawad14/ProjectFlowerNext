@@ -42,9 +42,9 @@ export default function CategoriesClient({ products }: Props) {
               <HeartIcon className="w-5 h-5 text-black-500" />
             </button>
 
-            <Link href={"/categories/" + product._id}>
-            
-              <div className="relative w-full h-50">
+            {/* 👇 link to category details */}
+            <Link href={`/categories/${product._id}`}>
+              <div className="relative w-full h-48">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -56,14 +56,12 @@ export default function CategoriesClient({ products }: Props) {
 
             <CardHeader className="items-center">
               <CardTitle className="text-base font-semibold line-clamp-2">
-                {product.name.split(" ", 2).join(" ")}
+                {product.name}
               </CardTitle>
               <CardDescription className="text-sm text-gray-500">
                 {product.slug}
               </CardDescription>
             </CardHeader>
-
-            <Addtocart productId={product._id} />
           </Card>
         ))}
       </div>

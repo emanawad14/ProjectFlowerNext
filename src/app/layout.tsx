@@ -36,7 +36,7 @@ export default function RootLayout({
             <Toaster/>
         <Navbar />
 
-        <div className="w-[95%] mx-auto px-1">{children}</div>
+        <div className="w-[100%] mx-auto px-1">{children}</div>
 
         </CartContextProvider>
       

@@ -1,6 +1,7 @@
 "use client";
 
 import Loading from "@/app/loading";
+import CheckOut from "@/components/checkout/checkout";
 import { CartContext } from "@/components/Context/CartContext";
 import { Button } from "@/components/ui/button";
 import { formatCurrency } from "@/Helpers/formatCurrency";
@@ -140,6 +141,15 @@ export default function Cart() {
       </div>
     );
   }
+  //********************************************** */
+
+ 
+  
+
+
+
+
+  //********************************************** */
 
   return (
     <div className="py-6 px-4">
@@ -267,7 +277,8 @@ export default function Cart() {
               </div>
 
               <div className="mt-4 flex flex-col gap-2">
-                <Button className="w-full">Proceed to Checkout</Button>
+               
+               <CheckOut cartId={cartData?.cartId!}/>
                 <Button variant="outline" className="w-full">
                   Continue Shopping
                 </Button>
