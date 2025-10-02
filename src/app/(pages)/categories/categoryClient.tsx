@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import Addtocart from "@/components/AddToCart/Addtocart";
 import { CategoryI } from "@/interfaces";
+import AddtoWsh from "@/components/AddtowishList/AddtoWsh";
 
 interface Props {
   products: CategoryI[];
@@ -38,9 +39,8 @@ export default function CategoriesClient({ products }: Props) {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
           <Card key={product._id} className="relative group">
-            <button className="absolute top-3 right-3 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition">
-              <HeartIcon className="w-5 h-5 text-black-500" />
-            </button>
+           
+           <AddtoWsh/>
 
             {/* 👇 link to category details */}
             <Link href={`/categories/${product._id}`}>
@@ -62,6 +62,7 @@ export default function CategoriesClient({ products }: Props) {
                 {product.slug}
               </CardDescription>
             </CardHeader>
+            
           </Card>
         ))}
       </div>

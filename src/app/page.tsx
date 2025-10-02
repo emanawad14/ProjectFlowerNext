@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
-      <div className="relative h-screen w-full flex items-center justify-center text-center">
+      <div className="relative h-screen w-full flex items-center bg-amber-700 justify-center text-center">
         <Image
-          src={"/unsplash_5gkYsrH_ebY.png"}
+          src={"/unsplash_Q-72wa9-7Dg.png"}
           alt="Shopping background"
           fill
           className="object-contain -z-10"

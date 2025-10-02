@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import AddtoWsh from "@/components/AddtowishList/AddtoWsh";
 
 export default function ProductPage() {
   const [products, setProducts] = useState<ProductI[]>([]);
@@ -58,7 +59,7 @@ export default function ProductPage() {
 
   return (
     <div className="px-6 py-8">
-      {/* 🔧 Controls */}
+     
       <div className="flex flex-col sm:flex-row gap-4 mb-6 justify-between items-center">
         <Input
           type="search"
@@ -69,7 +70,7 @@ export default function ProductPage() {
         />
 
         <div className="flex gap-4">
-          {/* Filter */}
+         
           <Select onValueChange={(val) => setFilter(val)} defaultValue="all">
             <SelectTrigger className="w-[160px]">
               <SelectValue placeholder="Filter" />
@@ -81,7 +82,7 @@ export default function ProductPage() {
             </SelectContent>
           </Select>
 
-          {/* Sort */}
+         
           <Select onValueChange={(val) => setSort(val)} defaultValue="default">
             <SelectTrigger className="w-[160px]">
               <SelectValue placeholder="Sort" />
@@ -96,14 +97,12 @@ export default function ProductPage() {
         </div>
       </div>
 
-      {/* 🛒 Products Grid */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
           <Card key={product._id} className="relative group">
-            <button className="absolute top-3 right-3 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition">
-              <HeartIcon className="w-5 h-5 text-black-500" />
-            </button>
-
+            
+            <AddtoWsh productId={product.id}/>
             <Link href={"/products/" + product._id}>
               <div className="relative w-full h-52">
                 <Image
